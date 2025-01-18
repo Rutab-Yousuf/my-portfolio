@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React from "react";
 import { Github, Linkedin, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { ReactElement } from "react";
 
@@ -10,7 +10,7 @@ interface FooterLink {
   icon?: ReactElement;
 }
 
-const FooterComponent = memo(() => {
+const FooterComponent = () => {
   const quickLinks: FooterLink[] = [
     { label: "Home", href: "#home" },
     { label: "Education", href: "#education" },
@@ -70,7 +70,7 @@ const FooterComponent = memo(() => {
           <div>
             <h3 className="text-purple-300 font-semibold mb-4">Built With</h3>
             <div className="flex flex-wrap gap-2">
-              {["Next.js", "Tailwind CSS", "TypeScript", "Lucide Icons"].map(
+              {technologies.map(
                 (tech, index) => (
                   <span
                     key={index}
@@ -124,6 +124,6 @@ const FooterComponent = memo(() => {
       </div>
     </footer>
   );
-});
+};
 
 export default FooterComponent;
